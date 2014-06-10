@@ -12,6 +12,7 @@ public interface ISpielObjekt
     public void beiZusammenstossMit( ISpielObjekt objekt);
     public void setzePosition(int x, int y);
     public void bewege(int x, int y);
-    public void gibHitBox();
-    public void gibPosition();
+    public HitBox gibHitBox();
+    public int gibPositionX();
+    public int gibPositionY();
 }
