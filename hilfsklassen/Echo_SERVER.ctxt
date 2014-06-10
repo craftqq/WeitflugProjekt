@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Echo_SERVER()
+comment0.text=\r\n\ Konstruktor\ des\ Servers\r\n\ \r\n
+comment1.params=
+comment1.target=void\ ServerStarten()
+comment1.text=\r\n\ fragt\ den\ Port\ ab\ und\ erzeugt\ den\ Serversocket\r\n
+comment2.params=
+comment2.target=void\ ClientVerbindungStarten()
+comment2.text=\r\n\ wartet\ auf\ eine\ Clientverbindung\ warten\ und\ erzeugt\ die\ n&ouml;tigen\r\n\ Lese-\ und\ Schreibobjekte\ nach\ dem\ eine\ Verbindung\ hergestellt\ wurde\r\n
+comment3.params=
+comment3.target=void\ Serverprozess()
+comment4.params=
+comment4.target=void\ VerbindungBeenden()
+comment4.text=\r\n\ schlie&szlig;t\ den\ Serversocket\r\n
+numComments=5

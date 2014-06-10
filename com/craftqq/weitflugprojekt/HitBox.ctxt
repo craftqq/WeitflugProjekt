@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=xStart\ yStart\ xSize\ ySize
+comment0.target=HitBox(int,\ int,\ int,\ int)
+comment1.params=hitbox
+comment1.target=boolean\ berechneZusammenstossMit(HitBox)
+comment1.text=\r\n\ vergleicht\ die\ eingenommene\ fl\u00E4che\ zweier\ Hitboxen\ miteinander\r\n\ \r\n
+numComments=2
