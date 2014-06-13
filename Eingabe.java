@@ -31,7 +31,7 @@ public class Eingabe
                eingabeOK=false;
             }
         } while (!eingabeOK);
-        
+        scan.close();
         return i;
     }
 
@@ -62,7 +62,7 @@ public class Eingabe
                eingabeOK=false;
             }
         } while (!eingabeOK);
-        
+        scan.close();
         return d;
     }
 
@@ -79,7 +79,9 @@ public class Eingabe
     {
         Scanner scan = new Scanner(System.in);
         System.out.print(promt);
-        return scan.nextLine();
+        String s = scan.nextLine();
+        scan.close();
+        return s;
     }
 
     public static String gibString() {
@@ -98,6 +100,7 @@ public class Eingabe
         while (true) {
             String s = scan.nextLine();
             if (s.length()>0) {
+            	scan.close();
                 return s.charAt(0);
             } else {
                 System.out.println("Bitte ein Zeichen eingeben! ");
@@ -136,7 +139,7 @@ public class Eingabe
                 System.out.println("Bitte wahr oder falsch eingeben: ");
             }
         } while (!eingabeOK);
-
+        scan.close();
         return b;
     }
 
