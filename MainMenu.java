@@ -1,4 +1,5 @@
 
+
 public class MainMenu implements IScreen 
 {
 	Taste exit;
@@ -10,6 +11,7 @@ public class MainMenu implements IScreen
 		switch(ID)
 		{
 		case 0:
+			this.schliesse();
 			GameEngine.end();
 		}
 
@@ -20,6 +22,7 @@ public class MainMenu implements IScreen
 	{
 		exit = new Taste("Exit", 50, 50, 200, 50);
 		exit.setzeLink(this, 0);
+		GameEngine.musicEngine.spieleAudioEndlos("mainMenu.wav");
 		
 	}
 
@@ -28,6 +31,7 @@ public class MainMenu implements IScreen
 	{
 		exit.entfernen();
 		exit = null;
+		GameEngine.musicEngine.stoppeAudio("mainMenu.wav");
 	}
 
 }

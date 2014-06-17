@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=dateiname
+comment0.target=DateiLeser(java.lang.String)
+comment1.params=
+comment1.target=java.lang.String[]\ lesen()
+comment2.params=name
+comment2.target=void\ setzeDateiname(java.lang.String)
+numComments=3

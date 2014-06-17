@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=
+comment1.target=void\ setup()
+comment2.params=
+comment2.target=void\ start()
+comment3.params=
+comment3.target=void\ end()
+comment4.params=
+comment4.target=void\ load()
+comment4.text=\r\n\ l\u00E4dt\ den\ Spielstand\ /\ Optionen\r\n
+comment5.params=
+comment5.target=void\ save()
+comment5.text=\r\n\ speichert\ den\ spielstand\ /\ Optionen\r\n
+numComments=6

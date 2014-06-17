@@ -11,8 +11,8 @@ public class GameEngine
 	public static PhysEngine physEngine;
 	
 	//Einstellungen
-	public static boolean sound = false;
-	public static boolean music = false;
+	public static boolean sound = true;
+	public static boolean music = true;
 	
 	//Objekte, die während des Spiels verändert werden, aber von Spiel zu Spiel erhalten bleiben
 	public static int coins = 0;
@@ -54,11 +54,12 @@ public class GameEngine
 	public static void start()
 	{
 		screens.get("mainMenu").rufeAuf();
-		musicEngine.spieleAudioEndlos("mainMenu.wav");
 	}
 	
 	public static void end()
 	{
+		physEngine.stop();
+		soundEngine.stoppeAlle();
 		Object[] screenObjects = screens.values().toArray();
 		for(Object screen : screenObjects)
 		{
@@ -71,8 +72,6 @@ public class GameEngine
 				
 			}
 		}
-		soundEngine.stoppeAlle();
-		physEngine.stop();
 		save();
 		System.exit(0);
 	}
