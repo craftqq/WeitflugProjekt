@@ -21,4 +21,9 @@ public class SoundEngine
 	{
 		return;
 	}
+
+	public void fuegeDateiHinzu(String fileName) 
+	{
+		return;
+	}
 }

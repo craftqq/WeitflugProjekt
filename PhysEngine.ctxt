@@ -1,4 +1,12 @@
 #BlueJ class context
-comment0.params=
-comment0.target=void\ stop()
-numComments=1
+comment0.params=deltaT
+comment0.target=PhysEngine(float)
+comment1.params=vX\ vY
+comment1.target=void\ start(float,\ float)
+comment2.params=vX\ vY\ aX
+comment2.target=void\ start(float,\ float,\ float)
+comment3.params=delta_t
+comment3.target=void\ berechneSchritt(float)
+comment4.params=
+comment4.target=void\ stop()
+numComments=5
