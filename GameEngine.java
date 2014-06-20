@@ -6,7 +6,7 @@ public class GameEngine
     //Feste Objekte (werden nicht verändert)
     public static HashMap<String, IScreen> screens = new HashMap<String, IScreen>();  //Screens wie Hauptmenu, Einstellungen, etc
     public static SoundEngine soundEngine;  //Sound
-    public static SoundEngine musicEngine;  //Musik
+    public static SoundEngine musikEngine;  //Musik
     public static PhysEngine physEngine;    //Physik und Interactionen von Objekten miteinander
     
     //Einstellungen
@@ -28,8 +28,8 @@ public class GameEngine
      */
     public static void setup()
     {
-        load();
-        physEngine = new PhysEngine(delta_t);
+        load();		//lädt optionen / spielstand
+        physEngine = new PhysEngine(delta_t); //erstellt den physEngine
         if(sound)
         {
             soundEngine = new ActiveSoundEngine();
@@ -41,14 +41,14 @@ public class GameEngine
         
         if(musik)
         {
-            musicEngine = new ActiveSoundEngine();
+            musikEngine = new ActiveSoundEngine();
         }
         else
         {
-            musicEngine = new SoundEngine();
+            musikEngine = new SoundEngine();
         }
         
-        screens.put("mainMenu", new MainMenu());
+        screens.put("mainMenu", new MainMenu()); //fügt das hauptmenu zur screensMap hinzu
     }
     
     /**
@@ -56,7 +56,7 @@ public class GameEngine
      */
     public static void start()
     {
-        screens.get("mainMenu").rufeAuf();
+        screens.get("mainMenu").rufeAuf(); //öffnet das Hauptmenu
     }
     
     /**
@@ -64,22 +64,23 @@ public class GameEngine
      */
     public static void end()
     {
-        physEngine.stop();
-        soundEngine.stoppeAlle();
-        Object[] screenObjects = screens.values().toArray();
-        for(Object screen : screenObjects)
+        physEngine.stop();			//stoppt den physEngine
+        soundEngine.stoppeAlle();	//stoppt den soundEngine
+        musikEngine.stoppeAlle();	//stoppt den musikEngine (SoundEngine für musik)
+        Object[] screenObjects = screens.values().toArray(); //erstellt ein Array für die screens und füllt diese mit den screens aus der map
+        for(Object screen : screenObjects)					 //geht alle screens durch
         {
             try
             {
-                ((IScreen) screen).schliesse();
+                ((IScreen) screen).schliesse();				 //versucht, den screen zu schliessen
             }
-            catch(Exception e)
+            catch(Exception e)		//fängt mögliche exceptions auf
             {
                 
             }
         }
-        save();
-        System.exit(0);
+        save();						//speichert
+        System.exit(0);				//beendet das spiel
     }
     
     /**
@@ -87,35 +88,35 @@ public class GameEngine
      */
     public static void load()
     {
-        DateiLeser leser = new DateiLeser("options.txt");
-        String[] optionDat = leser.lesen();
+        DateiLeser leser = new DateiLeser("options.txt"); //der DateiLeser, um die Optionen einzulesen
+        String[] optionDat = leser.lesen();               //lesen der Optionen
         for(String line : optionDat)
         {
-            int equalPos = line.indexOf("=");
-            if(equalPos != -1)
+            int equalPos = line.indexOf("=");       //Postion von "=" bestimmen, damit die Option / der wert zugeordnet werden kann
+            if(equalPos != -1)						//equalPos ist -1, falls "=" nicht vorhanden ist (und die zeile damit ungültig)
             {
-                String option = line.substring(0, equalPos - 1).trim();
-                String value = line.substring(equalPos + 1).trim();
-                switch(option)
+                String option = line.substring(0, equalPos - 1).trim();  //kürzt die Leerzeichen weg
+                String value = line.substring(equalPos + 1).trim();      //  -//-
+                switch(option)											 //geht die einzelnen zeilen mit optionen durch
                 {
-                case "sound":
-                    sound = value.equalsIgnoreCase("true");
+                case "sound":											 //option Sound
+                    sound = value.equalsIgnoreCase("true");				 //setzt sound auf true, falls der wert dem String "true"
+                    break;												 //entspricht
+                case "musik":											 //option musik; ist wie sound boolean
+                    musik = value.equalsIgnoreCase("true");				 // (String true setze musik auf true)
                     break;
-                case "musik":
-                    musik = value.equalsIgnoreCase("true");
-                    break;
-                case "delta_t":
-                    try
-                    {
-                        float f = Float.parseFloat(value);
-                        delta_t = f;
+                case "delta_t":											 //option delta_t; ist float, liest den wert aus der Datei
+                    try													 //versucht den String in float umzuwandeln (exception bei falscher
+                    {													 //formatierung
+                        float f = Float.parseFloat(value);				 //  -//-
+                        delta_t = f;									 //  -//-
                     }
-                    catch(NumberFormatException e)
+                    catch(NumberFormatException e)						 //fängt die exception auf
                     {
-                        System.out.println("delta_t-wert ist falsch formatiert; Einstellung wird ignoriert.");
+                        System.out.println("delta_t-wert ist falsch formatiert; Einstellung wird ignoriert.");  //benachrichtigung
                     }
                     break;
-                default:
+                default:			//wird ausgeführt, wenn keine option dem String (option) entspricht
                     break;
                 }
             }
@@ -127,11 +128,11 @@ public class GameEngine
      */
     public static void save()
     {
-        String[] options = new String[3];
-        options[0] = "sound = " + String.valueOf(sound);
-        options[1] = "musik = " + String.valueOf(musik);
-        options[2] = "delta_t = " + String.valueOf(delta_t);
-        DateiSchreiber schreiber = new DateiSchreiber("options.txt");
-        schreiber.schreiben(options);
+        String[] options = new String[3];						//erstellt ein neues Array für die optionen
+        options[0] = "sound = " + String.valueOf(sound);		//fügt den wert für sound hinzu
+        options[1] = "musik = " + String.valueOf(musik);		//fügt den wert für musik hinzu
+        options[2] = "delta_t = " + String.valueOf(delta_t);	//fügt den wert für delta_t hinzu
+        DateiSchreiber schreiber = new DateiSchreiber("options.txt");//erstellt den DateiSchreiber für "options.txt"
+        schreiber.schreiben(options);							//schreibt die optionen
     }
 }

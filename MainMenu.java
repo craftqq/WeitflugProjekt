@@ -17,14 +17,14 @@ public class MainMenu implements IScreen
 		case 1:
 			if(GameEngine.musik)
 			{
-				GameEngine.musicEngine.stoppeAlle();
-				GameEngine.musicEngine = new SoundEngine();
+				GameEngine.musikEngine.stoppeAlle();
+				GameEngine.musikEngine = new SoundEngine();
 				GameEngine.musik = false;
 			}
 			else
 			{
-				GameEngine.musicEngine = new ActiveSoundEngine();
-				GameEngine.musicEngine.spieleAudioEndlos("mainMenu.wav");
+				GameEngine.musikEngine = new ActiveSoundEngine();
+				GameEngine.musikEngine.spieleAudioEndlos("mainMenu.wav");
 				GameEngine.musik = true;
 			}
 			break;	
@@ -41,7 +41,7 @@ public class MainMenu implements IScreen
 		musik = new Taste("musik an / aus", 50, 120, 200, 50);
 		exit.setzeLink(this, 0);
 		musik.setzeLink(this, 1);
-		GameEngine.musicEngine.spieleAudioEndlos("mainMenu.wav");
+		GameEngine.musikEngine.spieleAudioEndlos("mainMenu.wav");
 		
 	}
 
@@ -52,7 +52,7 @@ public class MainMenu implements IScreen
 		musik.entfernen();
 		musik = null;
 		exit = null;
-		GameEngine.musicEngine.stoppeAudio("mainMenu.wav");
+		GameEngine.musikEngine.stoppeAudio("mainMenu.wav");
 	}
 
 }
