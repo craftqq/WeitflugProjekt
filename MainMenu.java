@@ -49,6 +49,8 @@ public class MainMenu implements IScreen
 	public void schliesse() 
 	{
 		exit.entfernen();
+		musik.entfernen();
+		musik = null;
 		exit = null;
 		GameEngine.musicEngine.stoppeAudio("mainMenu.wav");
 	}
