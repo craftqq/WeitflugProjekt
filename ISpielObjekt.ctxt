@@ -1,6 +1,7 @@
 #BlueJ class context
 comment0.params=objekt
-comment0.target=void\ beiZusammenstossMit(ISpielObjekt)
+comment0.target=boolean\ beiZusammenstossMit(ISpielObjekt)
+comment0.text=\r\n\ \r\n\ @param\ objekt\ \=\ das\ objekt\ mit\ dem\ das\ Spielobjekt\ zusammenstoesst\r\n\ @return\ true\ falls\ das\ Objekt\ beim\ zusammenstoss\ entfernt\ wird;\ ansonsten\ false\r\n
 comment1.params=x\ y
 comment1.target=void\ setzePosition(int,\ int)
 comment2.params=x\ y
