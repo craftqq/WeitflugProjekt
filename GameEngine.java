@@ -8,6 +8,7 @@ public class GameEngine
     public static SoundEngine soundEngine;  //Sound
     public static SoundEngine musikEngine;  //Musik
     public static PhysEngine physEngine;    //Physik und Interactionen von Objekten miteinander
+    public static Ausgabe ueberschrift = new Ausgabe("", 500,0,200,50);
     
     //Einstellungen
     public static boolean sound = true;  //true, falls Sound abgespielt werden soll
@@ -48,7 +49,8 @@ public class GameEngine
             musikEngine = new SoundEngine();
         }
         
-        screens.put("mainMenu", new MainMenu()); //fügt das hauptmenu zur screensMap hinzu
+        screens.put("Mainmenu", new MainMenu()); //fügt das hauptmenu zur screensMap hinzu
+        screens.put("Optionen", new Optionen());
     }
     
     /**
@@ -56,7 +58,7 @@ public class GameEngine
      */
     public static void start()
     {
-        screens.get("mainMenu").rufeAuf(); //öffnet das Hauptmenu
+        screens.get("Mainmenu").rufeAuf(); //öffnet das Hauptmenu
     }
     
     /**

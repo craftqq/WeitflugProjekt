@@ -1,58 +1,74 @@
 
-
 public class MainMenu implements IScreen 
 {
-	Taste exit;
-	Taste musik;
-	
-	@Override
-	public void tuWas(int ID) 
-	{
-		switch(ID)
-		{
-		case 0:
-			this.schliesse();
-			GameEngine.end();
-			break;
-		case 1:
-			if(GameEngine.musik)
-			{
-				GameEngine.musikEngine.stoppeAlle();
-				GameEngine.musikEngine = new SoundEngine();
-				GameEngine.musik = false;
-			}
-			else
-			{
-				GameEngine.musikEngine = new ActiveSoundEngine();
-				GameEngine.musikEngine.spieleAudioEndlos("mainMenu.wav");
-				GameEngine.musik = true;
-			}
-			break;	
-		default:
-			break;
-		}
+    Taste exit;
+    Taste spielen;
+    Taste credits;
+    Taste optionen;
+    Taste shop;
+    Taste achievements;
 
-	}
+    @Override
+    public void tuWas(int ID) 
+    {
+        switch(ID)
+        {
+            case 0:
+            this.schliesse();
+            GameEngine.end();
+            break;
+            case 1:
+            this.schliesse();
+            GameEngine.screens.get("Spiel").rufeAuf();
+            break;
+            case 2:
+            this.schliesse();
+            GameEngine.screens.get("Credits").rufeAuf();
+            break;
+            case 3:
+            this.schliesse();
+            GameEngine.screens.get("Optionen").rufeAuf();
+            break;
+            default:
+            break;
+        }
+    }
 
-	@Override
-	public void rufeAuf() 
-	{
-		exit = new Taste("Exit", 50, 50, 200, 50);
-		musik = new Taste("musik an / aus", 50, 120, 200, 50);
-		exit.setzeLink(this, 0);
-		musik.setzeLink(this, 1);
-		GameEngine.musikEngine.spieleAudioEndlos("mainMenu.wav");
-		
-	}
+    @Override
+    public void rufeAuf() 
+    {
+        spielen= new Taste("Spielen", 500, 100, 200,50);
+        credits= new Taste("Credits", 500,500,200,50);
+        optionen= new Taste("Optionen", 500,200,200,50);
+        shop= new Taste("Shop",500,300,200,50);
+        achievements= new Taste("Achievements", 500,400,200,50);
+        exit = new Taste("Exit", 500, 600, 200, 50);
+        exit.setzeLink(this, 0);
+        spielen.setzeLink(this, 1);
+        credits.setzeLink(this, 2);
+        optionen.setzeLink(this, 3);
+        shop.setzeLink(this, 4);
+        achievements.setzeLink(this, 5);
+        GameEngine.musikEngine.spieleAudioEndlos("mainMenu.wav");
 
-	@Override
-	public void schliesse() 
-	{
-		exit.entfernen();
-		musik.entfernen();
-		musik = null;
-		exit = null;
-		GameEngine.musikEngine.stoppeAudio("mainMenu.wav");
-	}
+    }
+
+    @Override
+    public void schliesse() 
+    {
+        spielen.entfernen();
+        spielen = null;
+        credits.entfernen();
+        credits= null;
+        optionen.entfernen();
+        optionen= null;
+        shop.entfernen();
+        shop= null;
+        achievements.entfernen();
+        achievements= null;
+        exit.entfernen();
+        exit = null;
+        GameEngine.musikEngine.stoppeAudio("mainMenu.wav");
+    }
 
 }
