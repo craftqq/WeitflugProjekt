@@ -23,11 +23,11 @@ public class MainMenu implements IScreen
             break;
             case 2:
             this.schliesse();
-            GameEngine.screens.get("Credits").rufeAuf();
+            GameEngine.screens.get("Optionen").rufeAuf();
             break;
             case 3:
             this.schliesse();
-            GameEngine.screens.get("Optionen").rufeAuf();
+            GameEngine.screens.get("Shop").rufeAuf();
             break;
             default:
             break;
@@ -38,17 +38,17 @@ public class MainMenu implements IScreen
     public void rufeAuf() 
     {
         spielen= new Taste("Spielen", 500, 100, 200,50);
-        credits= new Taste("Credits", 500,500,200,50);
         optionen= new Taste("Optionen", 500,200,200,50);
         shop= new Taste("Shop",500,300,200,50);
         achievements= new Taste("Achievements", 500,400,200,50);
+        credits= new Taste("Credits", 500,500,200,50);
         exit = new Taste("Exit", 500, 600, 200, 50);
         exit.setzeLink(this, 0);
         spielen.setzeLink(this, 1);
-        credits.setzeLink(this, 2);
-        optionen.setzeLink(this, 3);
-        shop.setzeLink(this, 4);
-        achievements.setzeLink(this, 5);
+        optionen.setzeLink(this, 2);
+        shop.setzeLink(this, 3);
+        achievements.setzeLink(this, 4);
+        credits.setzeLink(this, 5);
         GameEngine.musikEngine.spieleAudioEndlos("mainMenu.wav");
 
     }

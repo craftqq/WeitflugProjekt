@@ -51,6 +51,10 @@ public class GameEngine
         
         screens.put("Mainmenu", new MainMenu()); //fügt das hauptmenu zur screensMap hinzu
         screens.put("Optionen", new Optionen());
+        screens.put("Achievements", new Achievements());
+        screens.put("Shop", new Shop());
+        screens.put("Credits", new Credits());
+        screens.put("Spiel", new Spiel());
     }
     
     /**

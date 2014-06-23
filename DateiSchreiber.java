@@ -8,12 +8,12 @@ import java.io.OutputStreamWriter;
  */
 
 /**
- * @author craftqq
+ * @author Martin
  *
  */
 public class DateiSchreiber 
 {
-	public String dateiname;
+	public String dateiname; //name der Datei
 	
 	public DateiSchreiber(String fileName)
 	{
