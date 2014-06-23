@@ -15,6 +15,9 @@ public class GameEngine
     public static boolean musik = true;  //true, falls Musik abgespielt werden soll
     public static float delta_t = 0.05F;  //Grösse der Berechnungsabschnitte in Sekunden
     
+    //Spieleigenschaften
+    public static float g_normal = 9.81F;
+    
     //Objekte, die während des Spiels verändert werden, aber von Spiel zu Spiel erhalten bleiben
     public static int coins = 0;  //Anzahl an Coins (Spielwährung)
     
