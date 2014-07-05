@@ -31,6 +31,10 @@ public class MainMenu implements IScreen
             break;
             default:
             break;
+            case 5:
+            this.schliesse();
+            GameEngine.screens.get("Credits").rufeAuf();
+            break;
         }
     }
 

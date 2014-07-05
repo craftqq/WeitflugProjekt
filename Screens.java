@@ -175,7 +175,7 @@ public class Screens implements ITuWas {
     }
 
     void zeigeShop(){
-        Hauptmenü= new Taste();
+        
         Speed1= new Taste();
         Speed2= new Taste();
         Speed3= new Taste();

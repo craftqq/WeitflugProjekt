@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=bildName\ xpos\ ypos\ xsize\ ysize
-comment0.target=Hintergrund(java.lang.String,\ int,\ int,\ int,\ int)
+comment0.params=bildNameBoden\ bildNameMitte\ bildNameHimmel\ xpos\ ypos\ xsize\ ysize
+comment0.target=Hintergrund(java.lang.String,\ java.lang.String,\ java.lang.String,\ int,\ int,\ int,\ int)
 comment1.params=objekt
 comment1.target=boolean\ beiZusammenstossMit(ISpielObjekt)
 comment2.params=x\ y

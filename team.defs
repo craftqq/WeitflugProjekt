@@ -1,0 +1,15 @@
+#Mon Jun 30 09:14:04 CEST 2014
+bluej.teamsettings.groupname=
+bluej.teamsettings.subversion.server=riouxsvn.com/svn/projekt10ab
+bluej.teamsettings.user=vhh10
+bluej.teamsettings.ignore8=\\.DS_Store
+bluej.teamsettings.vcs=subversion
+bluej.teamsettings.ignore7=.*\\\#backup
+bluej.teamsettings.ignore6=.*\\\#
+bluej.teamsettings.ignore5=.*\\~
+bluej.teamsettings.ignore4=.*\\.ctxt
+bluej.teamsettings.ignore3=team\\.defs
+bluej.teamsettings.subversion.repositoryPrefix=
+bluej.teamsettings.ignore2=bluej\\.pkh
+bluej.teamsettings.ignore1=.*\\.class
+bluej.teamsettings.subversion.protocol=https

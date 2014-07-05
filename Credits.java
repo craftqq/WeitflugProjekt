@@ -1,22 +1,622 @@
 
 public class Credits implements IScreen {
+    Ausgabe a;
+    Ausgabe b;
+    Ausgabe c;
+    Ausgabe d;
+    Ausgabe e;
+    Ausgabe f;
+    Ausgabe g;
+    Ausgabe h;
+    Ausgabe i;
+    Ausgabe j;
+    Ausgabe k;
+    Ausgabe l;
+    Ausgabe m;
+    Ausgabe n;
+    Ausgabe o;
+    Ausgabe p;
+    Ausgabe q;
+    Ausgabe r;
+    Ausgabe s;
+    Ausgabe t;
+    Ausgabe u;
+    Ausgabe v;
+    Ausgabe w;
+    Ausgabe x;
+    Ausgabe y;
+    Ausgabe z;
+    Ausgabe ä;
+    Ausgabe ü;
+    Ausgabe ö;
+    Ausgabe aa;
+    Ausgabe bb;
+    Ausgabe cc;
+    Ausgabe dd;
+    int zahl;
+    @Override
+    public void tuWas(int ID) {
+        // TODO Auto-generated method stub
 
-	@Override
-	public void tuWas(int ID) {
-		// TODO Auto-generated method stub
+    }
 
-	}
+    @Override
+    public void rufeAuf() {
+        // TODO Auto-generated method stub
+        GameEngine.musikEngine.spieleAudioEndlos("mainMenu.wav");
+        a= new Ausgabe();
+        b= new Ausgabe();
+        c= new Ausgabe();
+        d= new Ausgabe();
+        e= new Ausgabe();
+        f= new Ausgabe(); 
+        g= new Ausgabe();
+        h= new Ausgabe();
+        i= new Ausgabe();
+        j= new Ausgabe();
+        k= new Ausgabe();
+        l= new Ausgabe();
+        m= new Ausgabe();
+        n= new Ausgabe();
+        o= new Ausgabe(); 
+        p= new Ausgabe();
+        q= new Ausgabe();
+        r= new Ausgabe();
+        s= new Ausgabe();
+        t= new Ausgabe();
+        u= new Ausgabe();
+        v= new Ausgabe();
+        w= new Ausgabe();
+        x= new Ausgabe(); 
+        y= new Ausgabe();
+        z= new Ausgabe();
+        aa= new Ausgabe();
 
-	@Override
-	public void rufeAuf() {
-		// TODO Auto-generated method stub
+        int zahl= 0;
+        if(zahl==0){
+            a.setzePosition(200,700);
+            a.setzeGroesse(1000,50);
+            a.setzeAusrichtung(1);
+            b.setzePosition(200,775);
+            b.setzeGroesse(1000,50);
+            b.setzeAusrichtung(1);
+            c.setzePosition(200,850);
+            c.setzeGroesse(1000,50);
+            c.setzeAusrichtung(1);
+            d.setzePosition(200,925);
+            d.setzeGroesse(1000,50);
+            d.setzeAusrichtung(1);
+            e.setzePosition(200,1000);
+            e.setzeGroesse(1000,50);
+            e.setzeAusrichtung(1);
+            f.setzePosition(200,1075);
+            f.setzeGroesse(1000,50);
+            f.setzeAusrichtung(1);
+            g.setzePosition(200,1150);
+            g.setzeGroesse(1000,50);
+            g.setzeAusrichtung(1);
+            h.setzePosition(200,1225);
+            h.setzeGroesse(1000,50);
+            h.setzeAusrichtung(1);
+            i.setzePosition(200,1300);
+            i.setzeGroesse(1000,50);
+            i.setzeAusrichtung(1);
+            j.setzePosition(200,700);
+            j.setzeGroesse(1000,50);
+            j.setzeAusrichtung(1);
+            k.setzePosition(200,775);
+            k.setzeGroesse(1000,50);
+            k.setzeAusrichtung(1);
+            l.setzePosition(200,850);
+            l.setzeGroesse(1000,50);
+            l.setzeAusrichtung(1);
+            m.setzePosition(200,925);
+            m.setzeGroesse(1000,50);
+            m.setzeAusrichtung(1);
+            n.setzePosition(200,1000);
+            n.setzeGroesse(1000,50);
+            n.setzeAusrichtung(1);
+            o.setzePosition(200,1075);
+            o.setzeGroesse(1000,50);
+            o.setzeAusrichtung(1);
+            p.setzePosition(200,1150);
+            p.setzeGroesse(1000,50);
+            p.setzeAusrichtung(1);
+            q.setzePosition(200,1225);
+            q.setzeGroesse(1000,50);
+            q.setzeAusrichtung(1);
+            r.setzePosition(200,1300);
+            r.setzeGroesse(1000,50);
+            r.setzeAusrichtung(1);
+            s.setzePosition(200,700);
+            s.setzeGroesse(1000,50);
+            s.setzeAusrichtung(1);
+            t.setzePosition(200,775);
+            t.setzeGroesse(1000,50);
+            t.setzeAusrichtung(1);
+            u.setzePosition(200,850);
+            u.setzeGroesse(1000,50);
+            u.setzeAusrichtung(1);
+            v.setzePosition(200,925);
+            v.setzeGroesse(1000,50);
+            v.setzeAusrichtung(1);
+            w.setzePosition(200,1000);
+            w.setzeGroesse(1000,50);
+            w.setzeAusrichtung(1);
+            x.setzePosition(200,1075);
+            x.setzeGroesse(1000,50);
+            x.setzeAusrichtung(1);
+            y.setzePosition(200,1150);
+            y.setzeGroesse(1000,50);
+            y.setzeAusrichtung(1);
+            z.setzePosition(200,1225);
+            z.setzeGroesse(1000,50);
+            z.setzeAusrichtung(1);
+            aa.setzePosition(200,1300);
+            aa.setzeGroesse(1000,50);
+            aa.setzeAusrichtung(1);
 
-	}
+        }
+        while(zahl<700){    
+            a.verschieben(0,-1);
+            b.verschieben(0,-1);
+            c.verschieben(0,-1);
+            d.verschieben(0,-1);
+            e.verschieben(0,-1);
+            f.verschieben(0,-1);
+            g.verschieben(0,-1);
+            h.verschieben(0,-1);
+            i.verschieben(0,-1);
+            a.setzeAusgabetext("WEITFLUG THE GAME  ");
+            b.setzeAusgabetext("A Niccer Productions");
+            c.setzeAusgabetext("Franchise Executive ProducerGM. VP.");
+            d.setzeAusgabetext("Fabian Egidy ");
+            e.setzeAusgabetext("DIRECTOR OF PRODUCT DEVELOPMENT");
+            f.setzeAusgabetext("Martin Brinktrine");
+            g.setzeAusgabetext("CREATIVE DIRECTOR");
+            h.setzeAusgabetext("Fabian Egidy");
+            i.setzeAusgabetext("PRESENTED BY NICCER");
+            zahl=zahl+1;
+            StaticTools.warte(7);
+        }
+        while(zahl<1400){
+            j.verschieben(0,-1);
+            k.verschieben(0,-1);
+            l.verschieben(0,-1);
+            m.verschieben(0,-1);
+            n.verschieben(0,-1);
+            o.verschieben(0,-1);
+            p.verschieben(0,-1);
+            q.verschieben(0,-1);
+            r.verschieben(0,-1);
+            j.setzeAusgabetext("ART DIRECTION");
+            k.setzeAusgabetext("Fabian Egidy");
+            l.setzeAusgabetext("FRANCHISE ART DIRECTION");
+            m.setzeAusgabetext("Martin Brinktrine ");
+            n.setzeAusgabetext("AUDIO DIRECTOR");
+            o.setzeAusgabetext("Hans Zimmer");
+            p.setzeAusgabetext("PRODUCTION");
+            q.setzeAusgabetext("SENIOR PRODUCER");
+            r.setzeAusgabetext("Fabian Egidy, Martin Brinktrine");
 
-	@Override
-	public void schliesse() {
-		// TODO Auto-generated method stub
+            a.verschieben(0,-1);
+            b.verschieben(0,-1);
+            c.verschieben(0,-1);
+            d.verschieben(0,-1);
+            e.verschieben(0,-1);
+            f.verschieben(0,-1);
+            g.verschieben(0,-1);
+            h.verschieben(0,-1);
+            i.verschieben(0,-1);
+             a.setzeAusgabetext("WEITFLUG THE GAME  ");
+            b.setzeAusgabetext("A Niccer Productions");
+            c.setzeAusgabetext("Franchise Executive ProducerGM. VP.");
+            d.setzeAusgabetext("Fabian Egidy ");
+            e.setzeAusgabetext("DIRECTOR OF PRODUCT DEVELOPMENT");
+            f.setzeAusgabetext("Martin Brinktrine");
+            g.setzeAusgabetext("CREATIVE DIRECTOR");
+            h.setzeAusgabetext("Fabian Egidy");
+            i.setzeAusgabetext("PRESENTED BY NICCER");
+            zahl=zahl+1;
+            StaticTools.warte(7);
+        }
+        while(zahl<2100){
+            j.verschieben(0,-1);
+            k.verschieben(0,-1);
+            l.verschieben(0,-1);
+            m.verschieben(0,-1);
+            n.verschieben(0,-1);
+            o.verschieben(0,-1);
+            p.verschieben(0,-1);
+            q.verschieben(0,-1);
+            r.verschieben(0,-1);
+           j.setzeAusgabetext("ART DIRECTION");
+            k.setzeAusgabetext("Fabian Egidy");
+            l.setzeAusgabetext("FRANCHISE ART DIRECTION");
+            m.setzeAusgabetext("Martin Brinktrine ");
+            n.setzeAusgabetext("AUDIO DIRECTOR");
+            o.setzeAusgabetext("Hans Zimmer");
+            p.setzeAusgabetext("PRODUCTION");
+            q.setzeAusgabetext("SENIOR PRODUCER");
+            r.setzeAusgabetext("Fabian Egidy, Martin Brinktrine");
+            s.verschieben(0,-1);
+            t.verschieben(0,-1);
+            u.verschieben(0,-1);
+            v.verschieben(0,-1);
+            w.verschieben(0,-1);
+            x.verschieben(0,-1);
+            y.verschieben(0,-1);
+            z.verschieben(0,-1);
+            aa.verschieben(0,-1);
+            s.setzeAusgabetext("PRODUCERS");
+            t.setzeAusgabetext("Fabian Egidy");
+            u.setzeAusgabetext("Martin Brinktrine");
+            v.setzeAusgabetext("Chuck Norris ");
+            w.setzeAusgabetext("Your Mom");
+            x.setzeAusgabetext("Hans Sarpei");
+            y.setzeAusgabetext("Hugh Jackman");
+            z.setzeAusgabetext("Erik Range");
+            aa.setzeAusgabetext("Barack Obama");
+            a.setzePosition(200,700);
+            b.setzePosition(200,775);
+            c.setzePosition(200,850);
+            d.setzePosition(200,925);
+            e.setzePosition(200,1000);
+            f.setzePosition(200,1075);
+            g.setzePosition(200,1150);
+            h.setzePosition(200,1250);
+            i.setzePosition(200,1300);
+            zahl=zahl+1;
+            StaticTools.warte(7);
+        }
+        while(zahl<2800){
+            s.verschieben(0,-1);
+            t.verschieben(0,-1);
+            u.verschieben(0,-1);
+            v.verschieben(0,-1);
+            w.verschieben(0,-1);
+            x.verschieben(0,-1);
+            y.verschieben(0,-1);
+            z.verschieben(0,-1);
+            aa.verschieben(0,-1);
+            s.setzeAusgabetext("PRODUCERS");
+            t.setzeAusgabetext("Fabian Egidy");
+            u.setzeAusgabetext("Martin Brinktrine");
+            v.setzeAusgabetext("Chuck Norris ");
+            w.setzeAusgabetext("Your Mom");
+            x.setzeAusgabetext("Hans Sarpei");
+            y.setzeAusgabetext("Hugh Jackman");
+            z.setzeAusgabetext("Erik Range");
+            aa.setzeAusgabetext("Barack Obama");
+            a.verschieben(0,-1);
+            b.verschieben(0,-1);
+            c.verschieben(0,-1);
+            d.verschieben(0,-1);
+            e.verschieben(0,-1);
+            f.verschieben(0,-1);
+            g.verschieben(0,-1);
+            h.verschieben(0,-1);
+            i.verschieben(0,-1);
+            a.setzeAusgabetext("DEVELOPMENT MANAGERS");
+            b.setzeAusgabetext("SENIOR DEVELOPEMENT DIRECTORS");
+            c.setzeAusgabetext("Martin Brinktrine");
+            d.setzeAusgabetext("Fabian Egidy ");
+            e.setzeAusgabetext("DEVELOPMENT DIRECTORS");
+            f.setzeAusgabetext("Chuck Norris' son");
+            g.setzeAusgabetext("Chuck Norris' daughter");
+            h.setzeAusgabetext("Rick of SpaceFrog");
+            i.setzeAusgabetext("Steve of Spacefrog");
+            zahl=zahl+1;
+            StaticTools.warte(7);
+            j.setzePosition(200,700);
+            k.setzePosition(200,775);
+            l.setzePosition(200,850);
+            m.setzePosition(200,925);
+            n.setzePosition(200,1000);
+            o.setzePosition(200,1075);
+            p.setzePosition(200,1150);
+            q.setzePosition(200,1250);
+            r.setzePosition(200,1300);
+        }
+        while(zahl<3500){
+            a.verschieben(0,-1);
+            b.verschieben(0,-1);
+            c.verschieben(0,-1);
+            d.verschieben(0,-1);
+            e.verschieben(0,-1);
+            f.verschieben(0,-1);
+            g.verschieben(0,-1);
+            h.verschieben(0,-1);
+            i.verschieben(0,-1);
+           a.setzeAusgabetext("DEVELOPMENT MANAGERS");
+            b.setzeAusgabetext("SENIOR DEVELOPEMENT DIRECTORS");
+            c.setzeAusgabetext("Martin Brinktrine");
+            d.setzeAusgabetext("Fabian Egidy ");
+            e.setzeAusgabetext("DEVELOPMENT DIRECTORS");
+            f.setzeAusgabetext("Chuck Norris' son");
+            g.setzeAusgabetext("Chuck Norris' daughter");
+            h.setzeAusgabetext("Rick of SpaceFrog");
+            i.setzeAusgabetext("Steve of Spacefrog");
+            zahl=zahl+1;
+            StaticTools.warte(7);
+            j.verschieben(0,-1);
+            k.verschieben(0,-1);
+            l.verschieben(0,-1);
+            m.verschieben(0,-1);
+            n.verschieben(0,-1);
+            o.verschieben(0,-1);
+            p.verschieben(0,-1);
+            q.verschieben(0,-1);
+            r.verschieben(0,-1);
+            j.setzeAusgabetext("DESIGN");
+            k.setzeAusgabetext("LEAD GAMEPLAY DESIGNER");
+            l.setzeAusgabetext("Valentin Rahmel");
+            m.setzeAusgabetext("GAMEPLAY DESIGNER ");
+            n.setzeAusgabetext("Ash Ketchum");
+            o.setzeAusgabetext("LEAD LEVEL DESIGNER");
+            p.setzeAusgabetext("Son Goku");
+            q.setzeAusgabetext("LEVEL DESIGNERS");
+            r.setzeAusgabetext("Rocko & Misty");
+            s.setzePosition(200,700);
+            t.setzePosition(200,775);
+            u.setzePosition(200,850);
+            v.setzePosition(200,925);
+            w.setzePosition(200,1000);
+            x.setzePosition(200,1075);
+            y.setzePosition(200,1150);
+            z.setzePosition(200,1225);
+            aa.setzePosition(200,1300);
+        }
+        while(zahl<4200){
+            zahl=zahl+1;
+            StaticTools.warte(7);
+            j.verschieben(0,-1);
+            k.verschieben(0,-1);
+            l.verschieben(0,-1);
+            m.verschieben(0,-1);
+            n.verschieben(0,-1);
+            o.verschieben(0,-1);
+            p.verschieben(0,-1);
+            q.verschieben(0,-1);
+            r.verschieben(0,-1);
+            j.setzeAusgabetext("DESIGN");
+            k.setzeAusgabetext("LEAD GAMEPLAY DESIGNER");
+            l.setzeAusgabetext("Valentin Rahmel");
+            m.setzeAusgabetext("GAMEPLAY DESIGNER ");
+            n.setzeAusgabetext("Ash Ketchum");
+            o.setzeAusgabetext("LEAD LEVEL DESIGNER");
+            p.setzeAusgabetext("Son Goku");
+            q.setzeAusgabetext("LEVEL DESIGNERS");
+            r.setzeAusgabetext("Rocko & Misty");
 
-	}
+            
+            s.verschieben(0,-1);
+            t.verschieben(0,-1);
+            u.verschieben(0,-1);
+            v.verschieben(0,-1);
+            w.verschieben(0,-1);
+            x.verschieben(0,-1);
+            y.verschieben(0,-1);
+            z.verschieben(0,-1);
+            aa.verschieben(0,-1);
+            s.setzeAusgabetext("My Father Alex Mason");
+            t.setzeAusgabetext("Richi Baudach");
+            u.setzeAusgabetext("Mr Noname");
+            v.setzeAusgabetext("Tobinatorlp");
+            w.setzeAusgabetext("Pewdiepie");
+            x.setzeAusgabetext("Michael Schreyer");
+            y.setzeAusgabetext("Angela Merkel");
+            z.setzeAusgabetext("Erik Range");
+            aa.setzeAusgabetext("hitzund");
+            a.setzePosition(200,700);
+            b.setzePosition(200,775);
+            c.setzePosition(200,850);
+            d.setzePosition(200,925);
+            e.setzePosition(200,1000);
+            f.setzePosition(200,1075);
+            g.setzePosition(200,1150);
+            h.setzePosition(200,1250);
+            i.setzePosition(200,1300);
+        }
+        while(zahl<4900){
+            s.verschieben(0,-1);
+            t.verschieben(0,-1);
+            u.verschieben(0,-1);
+            v.verschieben(0,-1);
+            w.verschieben(0,-1);
+            x.verschieben(0,-1);
+            y.verschieben(0,-1);
+            z.verschieben(0,-1);
+            aa.verschieben(0,-1);
+            s.setzeAusgabetext("My Father Alex Mason");
+            t.setzeAusgabetext("Richi Baudach");
+            u.setzeAusgabetext("Mr Noname");
+            v.setzeAusgabetext("Tobinatorlp");
+            w.setzeAusgabetext("Pewdiepie");
+            x.setzeAusgabetext("Michael Schreyer");
+            y.setzeAusgabetext("Angela Merkel");
+            z.setzeAusgabetext("Erik Range");
+            aa.setzeAusgabetext("hitzund");
+            zahl=zahl+1;
+            StaticTools.warte(7);
+            a.verschieben(0,-1);
+            b.verschieben(0,-1);
+            c.verschieben(0,-1);
+            d.verschieben(0,-1);
+            e.verschieben(0,-1);
+            f.verschieben(0,-1);
+            g.verschieben(0,-1);
+            h.verschieben(0,-1);
+            i.verschieben(0,-1);
+            a.setzeAusgabetext("ENGINEERING");
+            b.setzeAusgabetext("LEAD ENGINEERS");
+            c.setzeAusgabetext("Paris Hilton");
+            d.setzeAusgabetext("LEAD GAMEPLAY ENGINEER ");
+            e.setzeAusgabetext("Haftbefehl");
+            f.setzeAusgabetext("LEAD ONLINE ENGINEER");
+            g.setzeAusgabetext("Cartman");
+            h.setzeAusgabetext("SENIOR RENDERING ENGINEER");
+            i.setzeAusgabetext("Karl the giant");
+            j.setzePosition(200,700);
+            k.setzePosition(200,775);
+            l.setzePosition(200,850);
+            m.setzePosition(200,925);
+            n.setzePosition(200,1000);
+            o.setzePosition(200,1075);
+            p.setzePosition(200,1150);
+            q.setzePosition(200,1225);
+            r.setzePosition(200,1300);
+        }
+        while(zahl<5600){
+            a.verschieben(0,-1);
+            b.verschieben(0,-1);
+            c.verschieben(0,-1);
+            d.verschieben(0,-1);
+            e.verschieben(0,-1);
+            f.verschieben(0,-1);
+            g.verschieben(0,-1);
+            h.verschieben(0,-1);
+            i.verschieben(0,-1);
+           a.setzeAusgabetext("ENGINEERING");
+            b.setzeAusgabetext("LEAD ENGINEERS");
+            c.setzeAusgabetext("Paris Hilton");
+            d.setzeAusgabetext("LEAD GAMEPLAY ENGINEER ");
+            e.setzeAusgabetext("Haftbefehl");
+            f.setzeAusgabetext("LEAD ONLINE ENGINEER");
+            g.setzeAusgabetext("Cartman");
+            h.setzeAusgabetext("SENIOR RENDERING ENGINEER");
+            i.setzeAusgabetext("Karl the giant");
+            zahl=zahl+1;
+            StaticTools.warte(7);
+            j.verschieben(0,-1);
+            k.verschieben(0,-1);
+            l.verschieben(0,-1);
+            m.verschieben(0,-1);
+            n.verschieben(0,-1);
+            o.verschieben(0,-1);
+            p.verschieben(0,-1);
+            q.verschieben(0,-1);
+            r.verschieben(0,-1);
+            j.setzeAusgabetext("CHARACTER ART");
+            k.setzeAusgabetext("CHARACTER ART DIRECTOR");
+            l.setzeAusgabetext("Georg Baselitz");
+            m.setzeAusgabetext("SENIOR CHARACTER ARTISTS ");
+            n.setzeAusgabetext("Wladimir Putin");
+            o.setzeAusgabetext("chadib");
+            p.setzeAusgabetext("craftqq");
+            q.setzeAusgabetext("Noccer ftw");
+            r.setzeAusgabetext("besefajo4");
+            s.setzePosition(200,700);
+            t.setzePosition(200,775);
+            u.setzePosition(200,850);
+            v.setzePosition(200,925);
+            w.setzePosition(200,1000);
+            x.setzePosition(200,1075);
+            y.setzePosition(200,1150);
+            z.setzePosition(200,1250);
+            aa.setzePosition(200,1300);
+        }
+        while(zahl<6300){
+            j.setzeAusgabetext("CHARACTER ART");
+            k.setzeAusgabetext("CHARACTER ART DIRECTOR");
+            l.setzeAusgabetext("Georg Baselitz");
+            m.setzeAusgabetext("SENIOR CHARACTER ARTISTS ");
+            n.setzeAusgabetext("Wladimir Putin");
+            o.setzeAusgabetext("chadib");
+            p.setzeAusgabetext("craftqq");
+            q.setzeAusgabetext("Noccer ftw");
+            r.setzeAusgabetext("besefajo4");
+            j.verschieben(0,-1);
+            k.verschieben(0,-1);
+            l.verschieben(0,-1);
+            m.verschieben(0,-1);
+            n.verschieben(0,-1);
+            o.verschieben(0,-1);
+            p.verschieben(0,-1);
+            q.verschieben(0,-1);
+            r.verschieben(0,-1);
+            zahl=zahl+1;
+            StaticTools.warte(7);
+            s.setzeAusgabetext("CATERING");
+            t.setzeAusgabetext("Nobody :(");
+            u.setzeAusgabetext("PROJEKT OWNER");
+            v.setzeAusgabetext("Fabian Egidy");
+            w.setzeAusgabetext("Martin Brinktrine");
+            x.setzeAusgabetext("SUPPORTED BY:");
+            y.setzeAusgabetext("The Niccer filmproduction corporation");
+            z.setzeAusgabetext("Thanks for playing this game and testing the boring credits");
+            aa.setzeAusgabetext("THANKS");
+            s.verschieben(0,0);
+            t.verschieben(0,0);
+            u.verschieben(0,0);
+            v.verschieben(0,0);
+            w.verschieben(0,0);
+            x.verschieben(0,0);
+            y.verschieben(0,0);
+            z.verschieben(0,0);
+            aa.verschieben(0,0);
+            a.setzePosition(200,700);
+            b.setzePosition(200,775);
+            c.setzePosition(200,850);
+            d.setzePosition(200,925);
+            e.setzePosition(200,1000);
+            f.setzePosition(200,1075);
+            g.setzePosition(200,1150);
+            h.setzePosition(200,1250);
+            i.setzePosition(200,1300);
+
+        }
+        while(zahl<7300){
+            s.setzeAusgabetext("CATERING");
+            t.setzeAusgabetext("Nobody :(");
+            u.setzeAusgabetext("PROJEKT OWNER");
+            v.setzeAusgabetext("Fabian Egidy");
+            w.setzeAusgabetext("Martin Brinktrine");
+            x.setzeAusgabetext("SUPPORTED BY:");
+            y.setzeAusgabetext("The Niccer filmproduction corporation");
+            z.setzeAusgabetext("Thanks for playing this game and testing the boring credits");
+            aa.setzeAusgabetext("THANKS");
+            s.verschieben(0,-1);
+            t.verschieben(0,-1);
+            u.verschieben(0,-1);
+            v.verschieben(0,-1);
+            w.verschieben(0,-1);
+            x.verschieben(0,-1);
+            y.verschieben(0,-1);
+            z.verschieben(0,-1);
+            aa.verschieben(0,-1);
+            a.setzePosition(200,700);
+            b.setzePosition(200,775);
+            c.setzePosition(200,850);
+            d.setzePosition(200,925);
+            e.setzePosition(200,1000);
+            f.setzePosition(200,1075);
+            g.setzePosition(200,1150);
+            h.setzePosition(200,1250);
+            i.setzePosition(200,1300);
+            zahl=zahl+1;
+            StaticTools.warte(20);
+        }
+        while(zahl<7850){
+            s.verschieben(0,-1);
+            t.verschieben(0,-1);
+            u.verschieben(0,-1);
+            v.verschieben(0,-1);
+            w.verschieben(0,-1);
+            x.verschieben(0,-1);
+            y.verschieben(0,-1);
+            z.verschieben(0,-1);
+            aa.verschieben(0,-1);
+            zahl=zahl+1;
+            StaticTools.warte(20);
+        }
+        GameEngine.screens.get("Mainmenu").rufeAuf();
+    }
+
+    @Override
+    public void schliesse() {
+        // TODO Auto-generated method stub
+
+    }
 
 }

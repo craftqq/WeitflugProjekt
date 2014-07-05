@@ -5,21 +5,36 @@ public class GameEngine
 {
     //Feste Objekte (werden nicht verändert)
     public static HashMap<String, IScreen> screens = new HashMap<String, IScreen>();  //Screens wie Hauptmenu, Einstellungen, etc
-    public static SoundEngine soundEngine;  //Sound
-    public static SoundEngine musikEngine;  //Musik
-    public static PhysEngine physEngine;    //Physik und Interactionen von Objekten miteinander
+    public static AudioPlayer  soundEngine = new AudioPlayer ();  //Sound
+    public static AudioPlayer  musikEngine = new AudioPlayer ();  //Musik
+    public static GameLoop physEngine = new GameLoop();    //Physik und Interactionen von Objekten miteinander
     public static Ausgabe ueberschrift = new Ausgabe("", 500,0,200,50);
     
     //Einstellungen
     public static boolean sound = true;  //true, falls Sound abgespielt werden soll
     public static boolean musik = true;  //true, falls Musik abgespielt werden soll
-    public static float delta_t = 0.05F;  //Grösse der Berechnungsabschnitte in Sekunden
     
     //Spieleigenschaften
-    public static float g_normal = 9.81F;
+    public static double normalG = 9.81D;
+    public static double maxV = 50.0D;
+    public static double maxA = 10.0D;
+    
+    public static double WiderstandV = 0.05D;
+    public static double widerstandZusatzV = 0.5D;
+    
+    public static double startV = 40.0D;
+    public static double startA = 0.0D;
+    
+    public static double coinsPerS = 1.0D;
+    public static double coinsMultiplier  = 1.0D;
+    public static double coinsPerM = 1.0D;
+    
+    public static int xSize = 20;
+    public static int ySize = 20;
+    
     
     //Objekte, die während des Spiels verändert werden, aber von Spiel zu Spiel erhalten bleiben
-    public static int coins = 0;  //Anzahl an Coins (Spielwährung)
+    public static double coins = 0;  //Anzahl an Coins (Spielwährung)
     
     public static void main(String[] args)
     {
@@ -33,23 +48,22 @@ public class GameEngine
     public static void setup()
     {
         load();		//lädt optionen / spielstand
-        physEngine = new PhysEngine(delta_t); //erstellt den physEngine
         if(sound)
         {
-            soundEngine = new ActiveSoundEngine();
+            soundEngine = new ActiveAudioPlayer ();
         }
         else
         {
-            soundEngine = new SoundEngine();
+            soundEngine = new AudioPlayer ();
         }
         
         if(musik)
         {
-            musikEngine = new ActiveSoundEngine();
+            musikEngine = new ActiveAudioPlayer ();
         }
         else
         {
-            musikEngine = new SoundEngine();
+            musikEngine = new AudioPlayer ();
         }
         
         screens.put("Mainmenu", new MainMenu()); //fügt das hauptmenu zur screensMap hinzu
@@ -114,17 +128,6 @@ public class GameEngine
                 case "musik":											 //option musik; ist wie sound boolean
                     musik = value.equalsIgnoreCase("true");				 // (String true setze musik auf true)
                     break;
-                case "delta_t":											 //option delta_t; ist float, liest den wert aus der Datei
-                    try													 //versucht den String in float umzuwandeln (exception bei falscher
-                    {													 //formatierung
-                        float f = Float.parseFloat(value);				 //  -//-
-                        delta_t = f;									 //  -//-
-                    }
-                    catch(NumberFormatException e)						 //fängt die exception auf
-                    {
-                        System.out.println("delta_t-wert ist falsch formatiert; Einstellung wird ignoriert.");  //benachrichtigung
-                    }
-                    break;
                 default:			//wird ausgeführt, wenn keine option dem String (option) entspricht
                     break;
                 }
@@ -140,7 +143,6 @@ public class GameEngine
         String[] options = new String[3];						//erstellt ein neues Array für die optionen
         options[0] = "sound = " + String.valueOf(sound);		//fügt den wert für sound hinzu
         options[1] = "musik = " + String.valueOf(musik);		//fügt den wert für musik hinzu
-        options[2] = "delta_t = " + String.valueOf(delta_t);	//fügt den wert für delta_t hinzu
         DateiSchreiber schreiber = new DateiSchreiber("options.txt");//erstellt den DateiSchreiber für "options.txt"
         schreiber.schreiben(options);							//schreibt die optionen
     }
