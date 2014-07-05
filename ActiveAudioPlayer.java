@@ -72,9 +72,12 @@ public class ActiveAudioPlayer extends AudioPlayer
 class AdvAudio extends Audio
 {
 	int zustand = 0;
+	String name;
+	
 	public AdvAudio(String filename) 
 	{
 		super(filename);
+		name = filename;
 	}
 	
 	@Override
@@ -114,5 +117,10 @@ class AdvAudio extends Audio
 			super.playEndlos();
 			zustand = 2;
 		}
+	}
+	
+	public String gibName()
+	{
+		return name;
 	}
 }

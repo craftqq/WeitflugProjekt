@@ -26,7 +26,7 @@ public abstract class SpielObjekt
 		bildC = new Bild(x, y, xsize, ysize, bildName);
 	}
 	
-	public abstract boolean beiZusammenstossMit(ISpielObjekt objekt);
+	public abstract boolean beiZusammenstossMit(SpielObjekt objekt);
 
 	public void setzePosition(int x, int y) 
 	{

@@ -15,7 +15,7 @@ public class Coin extends SpielObjekt
 	}
 
 	@Override
-	public boolean beiZusammenstossMit(ISpielObjekt objekt) 
+	public boolean beiZusammenstossMit(SpielObjekt objekt) 
 	{
 		if(objekt == GameEngine.physEngine.spieler)
 		{

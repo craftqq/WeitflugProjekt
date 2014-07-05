@@ -5,8 +5,8 @@ public class GameEngine
 {
     //Feste Objekte (werden nicht verändert)
     public static HashMap<String, IScreen> screens = new HashMap<String, IScreen>();  //Screens wie Hauptmenu, Einstellungen, etc
-    public static AudioPlayer  soundEngine = new AudioPlayer ();  //Sound
-    public static AudioPlayer  musikEngine = new AudioPlayer ();  //Musik
+    public static AudioPlayer  soundEngine = new AudioPlayer();  //Sound
+    public static AudioPlayer  musikEngine = new AudioPlayer();  //Musik
     public static GameLoop physEngine = new GameLoop();    //Physik und Interactionen von Objekten miteinander
     public static Ausgabe ueberschrift = new Ausgabe("", 500,0,200,50);
     
@@ -20,7 +20,7 @@ public class GameEngine
     public static double maxA = 10.0D;
     
     public static double WiderstandV = 0.05D;
-    public static double widerstandZusatzV = 0.5D;
+    public static double widerstandZusatzV = 0.2D;
     
     public static double startV = 40.0D;
     public static double startA = 0.0D;
@@ -50,20 +50,20 @@ public class GameEngine
         load();		//lädt optionen / spielstand
         if(sound)
         {
-            soundEngine = new ActiveAudioPlayer ();
+            soundEngine = new ActiveAudioPlayer();
         }
         else
         {
-            soundEngine = new AudioPlayer ();
+            soundEngine = new AudioPlayer();
         }
         
         if(musik)
         {
-            musikEngine = new ActiveAudioPlayer ();
+            musikEngine = new MusicLoop();
         }
         else
         {
-            musikEngine = new AudioPlayer ();
+            musikEngine = new AudioPlayer();
         }
         
         screens.put("Mainmenu", new MainMenu()); //fügt das hauptmenu zur screensMap hinzu

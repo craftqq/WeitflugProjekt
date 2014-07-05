@@ -1,8 +1,8 @@
 
 class Optionen implements IScreen{
-    Taste Sound;
-    Taste Musik;
-    Taste Hauptmenue;
+    Taste sound;
+    Taste musik;
+    Taste hauptmenu;
     
     public void tuWas(int ID)
     {
@@ -16,22 +16,26 @@ class Optionen implements IScreen{
             if(GameEngine.sound)
             {
                 GameEngine.soundEngine.stoppeAlle();
-                GameEngine.soundEngine = new AudioPlayer ();
+                GameEngine.soundEngine = new AudioPlayer();
+                sound.setzeAusgabetext("Sound an");
             }
             else
             {
-                GameEngine.soundEngine = new ActiveAudioPlayer ();
+                GameEngine.soundEngine = new ActiveAudioPlayer();
+                sound.setzeAusgabetext("Sound aus");
             }
             break;
             case 2:
             if(GameEngine.musik)
             {
                 GameEngine.musikEngine.stoppeAlle();
-                GameEngine.musikEngine = new AudioPlayer ();
+                GameEngine.musikEngine = new AudioPlayer();
+                musik.setzeAusgabetext("Musik an");
             }
                 else
                 {
-                    GameEngine.musikEngine = new ActiveAudioPlayer ();
+                    GameEngine.musikEngine = new MusicLoop();
+                    musik.setzeAusgabetext("Musik aus");
                 }
                 break;
                 default:
@@ -42,31 +46,46 @@ class Optionen implements IScreen{
     public void rufeAuf()
     {
         GameEngine.ueberschrift.setzeAusgabetext("Optionen");
-        Sound= new Taste();
-        Musik= new Taste();
-        Hauptmenue= new Taste();
-        Sound.setzeDimensionen(500,100,200,50);
-        Sound.setzeAusgabetext("Sound an");
-        Sound.setzeHintergrundfarbe("lila");
-        Musik.setzeDimensionen(500,175,200,50);
-        Musik.setzeAusgabetext("Musik an");
-        Musik.setzeHintergrundfarbe("lila");
-        Hauptmenue.setzeDimensionen(500,250,200,50);
-        Hauptmenue.setzeAusgabetext("Hauptmenü");
-        Hauptmenue.setzeHintergrundfarbe("lila");
-        Sound.setzeLink(this, 1);
-        Musik.setzeLink(this, 2);
-        Hauptmenue.setzeLink(this, 0);
+        GameEngine.musikEngine.spieleAudioEndlos("mainMenu.wav");
+        sound= new Taste();
+        musik= new Taste();
+        hauptmenu= new Taste();
+        sound.setzeDimensionen(500,100,200,50);
+        if(GameEngine.sound)
+        {
+        	sound.setzeAusgabetext("Sound aus");
+        }
+        else
+        {
+        	sound.setzeAusgabetext("Sound an");
+        }
+        sound.setzeHintergrundfarbe("lila");
+        musik.setzeDimensionen(500,175,200,50);
+        if(GameEngine.musik)
+        {
+        musik.setzeAusgabetext("Musik aus");
+        }
+        else
+        {
+        	musik.setzeAusgabetext("Musik an");
+        }
+        musik.setzeHintergrundfarbe("lila");
+        hauptmenu.setzeDimensionen(500,250,200,50);
+        hauptmenu.setzeAusgabetext("Hauptmenü");
+        hauptmenu.setzeHintergrundfarbe("lila");
+        sound.setzeLink(this, 1);
+        musik.setzeLink(this, 2);
+        hauptmenu.setzeLink(this, 0);
     }
     
     public void schliesse()
     {
-        Sound.entfernen();
-        Musik.entfernen();
-        Hauptmenue.entfernen();
-        Sound = null;
-        Musik = null;
-        Hauptmenue = null;
+        sound.entfernen();
+        musik.entfernen();
+        hauptmenu.entfernen();
+        sound = null;
+        musik = null;
+        hauptmenu = null;
         GameEngine.ueberschrift.entfernen();
         GameEngine.ueberschrift= null;
     }

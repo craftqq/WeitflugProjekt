@@ -1,7 +1,7 @@
 
 
 
-public class Hintergrund implements ISpielObjekt 
+public class Hintergrund extends SpielObjekt
 {
     Bild[] himmel = new Bild[3];
     Bild[] mitte = new Bild[3];
@@ -13,6 +13,7 @@ public class Hintergrund implements ISpielObjekt
     
     public Hintergrund(String bildNameBoden, String bildNameMitte, String bildNameHimmel, int xpos, int ypos, int xsize, int ysize)
     {
+    	super(xpos, ypos, xsize, ysize, bildNameMitte);
         for(int i = 0; i < 3; i++)
         {
             mitte[i] = new Bild(xpos + xsize * (i-1), ypos, xsize, ysize, bildNameMitte);
@@ -23,10 +24,12 @@ public class Hintergrund implements ISpielObjekt
         yPos = ypos;
         xSize = xsize;
         ySize = ysize;
+        this.bildC.entfernen();
+        this.bildC = null;
     }
     
     @Override
-    public boolean beiZusammenstossMit(ISpielObjekt objekt) 
+    public boolean beiZusammenstossMit(SpielObjekt objekt) 
     {
         return false;
     }
