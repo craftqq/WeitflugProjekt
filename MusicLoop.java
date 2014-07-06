@@ -6,6 +6,10 @@ public class MusicLoop extends AudioPlayer
 	@Override
 	public void fuegeDateiHinzu(String fileName)
 	{
+		if (loop == null)
+		{
+			loop = new AdvAudio(fileName);
+		}
 		loop.stop();
 		loop = new AdvAudio(fileName);
 	}
@@ -13,6 +17,10 @@ public class MusicLoop extends AudioPlayer
 	@Override
 	public void spieleAudio(String fileName)
 	{
+		if (loop == null)
+		{
+			loop = new AdvAudio(fileName);
+		}
 		if(loop.gibName().equalsIgnoreCase(fileName))
 		{
 			loop.play();
@@ -28,6 +36,10 @@ public class MusicLoop extends AudioPlayer
 	@Override
 	public void spieleAudioEndlos(String fileName)
 	{
+		if (loop == null)
+		{
+			loop = new AdvAudio(fileName);
+		}
 		if(loop.gibName().equalsIgnoreCase(fileName))
 		{
 			loop.playEndlos();
@@ -43,6 +55,10 @@ public class MusicLoop extends AudioPlayer
 	@Override
 	public void stoppeAudio(String fileName)
 	{
+		if (loop == null)
+		{
+			loop = new AdvAudio(fileName);
+		}
 		loop.stop();
 		loop = new AdvAudio(fileName);
 	}

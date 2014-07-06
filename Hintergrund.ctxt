@@ -2,7 +2,7 @@
 comment0.params=bildNameBoden\ bildNameMitte\ bildNameHimmel\ xpos\ ypos\ xsize\ ysize
 comment0.target=Hintergrund(java.lang.String,\ java.lang.String,\ java.lang.String,\ int,\ int,\ int,\ int)
 comment1.params=objekt
-comment1.target=boolean\ beiZusammenstossMit(ISpielObjekt)
+comment1.target=boolean\ beiZusammenstossMit(SpielObjekt)
 comment2.params=x\ y
 comment2.target=void\ setzePosition(int,\ int)
 comment3.params=x\ y
@@ -13,4 +13,6 @@ comment5.params=
 comment5.target=int\ gibPositionX()
 comment6.params=
 comment6.target=int\ gibPositionY()
-numComments=7
+comment7.params=
+comment7.target=void\ entfernen()
+numComments=8

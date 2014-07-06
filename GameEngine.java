@@ -145,7 +145,7 @@ public class GameEngine
      */
     public static void save()
     {
-        String[] options = new String[3];						//erstellt ein neues Array für die optionen
+        String[] options = new String[2];						//erstellt ein neues Array für die optionen
         options[0] = "sound = " + String.valueOf(sound);		//fügt den wert für sound hinzu
         options[1] = "musik = " + String.valueOf(musik);		//fügt den wert für musik hinzu
         DateiSchreiber schreiber = new DateiSchreiber("options.txt");//erstellt den DateiSchreiber für "options.txt"

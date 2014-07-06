@@ -1,3 +1,2 @@
 sound = true
 musik = true
-delta_t = 0.05

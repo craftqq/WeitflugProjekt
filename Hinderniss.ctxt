@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=x\ y
+comment0.target=Hinderniss(int,\ int)
+comment1.params=objekt
+comment1.target=boolean\ beiZusammenstossMit(SpielObjekt)
+numComments=2

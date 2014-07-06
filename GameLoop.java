@@ -20,6 +20,9 @@ public class GameLoop
 	
 	public void start()
 	{
+	    aktiv = true;
+	    v_x = GameEngine.startV;
+	    v_y = 10.0D;
 		spieler = new Spieler(0, 300);
 		hintergrund = new Hintergrund("hintergrund_boden.png", "hintergrund_mitte.png", "hintergrund_himmel.png", 0, 0, 500, 500);
 		PowerObjekt power = new PowerObjekt(500, 100, 200, 50);

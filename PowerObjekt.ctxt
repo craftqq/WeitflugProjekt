@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=x_\ y_\ xsize\ ysize
+comment0.target=PowerObjekt(int,\ int,\ int,\ int)
+comment1.params=
+comment1.target=int\ berechnePower()
+comment2.params=rueckgabe
+comment2.target=void\ tastenAktion(java.lang.String)
+numComments=3

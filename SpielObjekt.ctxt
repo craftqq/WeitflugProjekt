@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=x\ y\ xsize\ ysize\ bild
+comment0.target=SpielObjekt(int,\ int,\ int,\ int,\ Bild)
+comment1.params=x\ y\ xsize\ ysize\ bildName
+comment1.target=SpielObjekt(int,\ int,\ int,\ int,\ java.lang.String)
+comment2.params=objekt
+comment2.target=boolean\ beiZusammenstossMit(SpielObjekt)
+comment3.params=x\ y
+comment3.target=void\ setzePosition(int,\ int)
+comment4.params=x\ y
+comment4.target=void\ bewege(int,\ int)
+comment5.params=
+comment5.target=HitBox\ gibHitBox()
+comment6.params=
+comment6.target=int\ gibPositionX()
+comment7.params=
+comment7.target=int\ gibPositionY()
+numComments=8

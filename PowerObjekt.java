@@ -56,6 +56,7 @@ public class PowerObjekt implements ITastatur
 			{
 				return power;
 			}
+			StaticTools.warte(5);
 		}
 		
 		return power;
