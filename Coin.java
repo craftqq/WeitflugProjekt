@@ -17,7 +17,7 @@ public class Coin extends SpielObjekt
 	@Override
 	public boolean beiZusammenstossMit(SpielObjekt objekt) 
 	{
-		if(objekt == GameEngine.physEngine.spieler)
+		if(objekt == GameEngine.loop.spieler)
 		{
 			GameEngine.coins = wert * GameEngine.coinsMultiplier;
 			return true;

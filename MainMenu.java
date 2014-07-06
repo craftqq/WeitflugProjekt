@@ -7,6 +7,7 @@ public class MainMenu implements IScreen
     Taste optionen;
     Taste shop;
     Taste achievements;
+    Ausgabe coins;
 
     @Override
     public void tuWas(int ID) 
@@ -47,6 +48,7 @@ public class MainMenu implements IScreen
         achievements= new Taste("Achievements", 500,400,200,50);
         credits= new Taste("Credits", 500,500,200,50);
         exit = new Taste("Exit", 500, 600, 200, 50);
+        coins = new Ausgabe(((Integer) ((int)GameEngine.coins)).toString(), 10, 10, 100, 50);
         exit.setzeLink(this, 0);
         spielen.setzeLink(this, 1);
         optionen.setzeLink(this, 2);
@@ -72,6 +74,8 @@ public class MainMenu implements IScreen
         achievements= null;
         exit.entfernen();
         exit = null;
+        coins.entfernen();
+        coins = null;
         GameEngine.musikEngine.stoppeAudio("mainMenu.wav");
     }
 

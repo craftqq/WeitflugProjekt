@@ -85,5 +85,24 @@ public class Hintergrund extends SpielObjekt
     {
         return yPos;
     }
+    
+    public void entfernen()
+    {
+    	for(Bild bild : himmel)
+    	{
+    		bild.entfernen();
+    		bild = null;
+    	}
+    	for(Bild bild : boden)
+    	{
+    		bild.entfernen();
+    		bild = null;
+    	}
+    	for(Bild bild : mitte)
+    	{
+    		bild.entfernen();
+    		bild = null;
+    	}
+    }
 
 }

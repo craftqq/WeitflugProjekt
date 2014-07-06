@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Random;
 
 
 public class GameEngine 
@@ -7,8 +8,9 @@ public class GameEngine
     public static HashMap<String, IScreen> screens = new HashMap<String, IScreen>();  //Screens wie Hauptmenu, Einstellungen, etc
     public static AudioPlayer  soundEngine = new AudioPlayer();  //Sound
     public static AudioPlayer  musikEngine = new AudioPlayer();  //Musik
-    public static GameLoop physEngine = new GameLoop();    //Physik und Interactionen von Objekten miteinander
+    public static GameLoop loop = new GameLoop();    //Physik und Interactionen von Objekten miteinander
     public static Ausgabe ueberschrift = new Ausgabe("", 500,0,200,50);
+    public static Random random = new Random();
     
     //Einstellungen
     public static boolean sound = true;  //true, falls Sound abgespielt werden soll
@@ -21,9 +23,12 @@ public class GameEngine
     
     public static double WiderstandV = 0.05D;
     public static double widerstandZusatzV = 0.2D;
+    public static double widerstandBoden = 0.2D;
     
     public static double startV = 40.0D;
     public static double startA = 0.0D;
+    public static double startY = 20.0D;
+    public static double startX = 0.0D;
     
     public static double coinsPerS = 1.0D;
     public static double coinsMultiplier  = 1.0D;
@@ -87,7 +92,7 @@ public class GameEngine
      */
     public static void end()
     {
-        physEngine.stop();			//stoppt den physEngine
+        loop.stop();			//stoppt den physEngine
         soundEngine.stoppeAlle();	//stoppt den soundEngine
         musikEngine.stoppeAlle();	//stoppt den musikEngine (SoundEngine für musik)
         Object[] screenObjects = screens.values().toArray(); //erstellt ein Array für die screens und füllt diese mit den screens aus der map

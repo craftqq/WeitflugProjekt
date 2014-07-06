@@ -7,21 +7,7 @@ public class PowerObjekt implements ITastatur
 	int y;
 	int xSize;
 	int ySize;
-	ITuWas link;
-	int id;
-	
-	public PowerObjekt(int x_, int y_, int xsize, int ysize, ITuWas linkObjekt, int ID) 
-	{
-		x = x_;
-		y = y_;
-		xSize = xsize;
-		ySize = ysize;
-		tastatur = new Tastatur();
-		tastatur.setzeLink(this);
-		tastatur.meldeAnTaste("ENTER", "Enter");
-		link = linkObjekt;
-		id = ID;
-	}
+	boolean rechnet;
 	
 	public PowerObjekt(int x_, int y_, int xsize, int ysize) 
 	{
@@ -34,16 +20,45 @@ public class PowerObjekt implements ITastatur
 		tastatur.meldeAnTaste("ENTER", "Enter");
 	}
 	
-	public void setzeLink(ITuWas linkObjekt, int ID)
+	public int berechnePower()
 	{
-		link = linkObjekt;
-		id = ID;
-	}
-
-	public void setzeLink(ITuWas linkObjekt)
-	{
-		link = linkObjekt;
-		id = 1;
+		Rechteck leiste = new Rechteck(x, y, xSize, ySize);
+		leiste.setzeFarbe("gruen");
+		int i = -1;
+		int breite = xSize;
+		while(rechnet)
+		{
+			breite +=i;
+			power = breite;
+			leiste.setzeGroesse(breite, ySize);
+			if(breite <= 1)
+			{
+				i = 1;
+			}
+			else if (breite >= xSize)
+			{
+				i = -1;
+			}
+			int farbe = xSize + 1/ breite + 1;
+			if(farbe == 1)
+			{
+				leiste.setzeFarbe("gruen");
+			}
+			else if (farbe == 2)
+			{
+				leiste.setzeFarbe("gelb");
+			}
+			else if(farbe >= 3)
+			{
+				leiste.setzeFarbe("rot");
+			}
+			if(tastatur.istgedrueckt("ENTER"))
+			{
+				return power;
+			}
+		}
+		
+		return power;
 	}
 	
 	@Override
@@ -51,7 +66,7 @@ public class PowerObjekt implements ITastatur
 	{
 		if(rueckgabe.equalsIgnoreCase("Enter"))
 		{
-			link.tuWas(id);
+			rechnet = false;
 		}
 	}
 }
