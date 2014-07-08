@@ -17,7 +17,7 @@ public class GameEngine
     public static boolean musik = true;  //true, falls Musik abgespielt werden soll
     
     //Spieleigenschaften
-    public static double normalG = 9.81D;
+    public static double normalG = -9.81D;
     public static double maxV = 50.0D;
     public static double maxA = 10.0D;
     
