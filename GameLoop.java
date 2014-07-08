@@ -44,7 +44,7 @@ public class GameLoop
             long unterschied = System.currentTimeMillis() - zeitLetzterSchritt;
             zeitLetzterSchritt = System.currentTimeMillis();
             schritt(((double)unterschied) / 1000);
-            if(i > 20)
+            if((i > 20) && (objekte.size() <= 20))
             {
                 i = 0;
                 erzeugeNeuesSpielObjekt();
@@ -108,7 +108,7 @@ public class GameLoop
         }
         for(SpielObjekt objekt : objekte)
         {
-            objekt.bewege((int) x, (int) -y);
+            objekt.bewege((int) x * 10, (int) -y * 10);
             if(objekt.gibHitBox().berechneZusammenstossMit(spieler.gibHitBox()))
             {
                 objekt.beiZusammenstossMit(spieler);
@@ -119,7 +119,7 @@ public class GameLoop
                 objekte.remove(objekt);
             }
         }
-        hintergrund.bewege((int) x, (int) y);
+        hintergrund.bewege((int) x * 10, (int) -y * 10);
     }
 
     public void stop()
