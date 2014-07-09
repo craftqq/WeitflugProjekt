@@ -8,6 +8,8 @@ public class PowerObjekt implements ITastatur
 	int xSize;
 	int ySize;
 	boolean rechnet;
+	ITuWas link;
+	int linkID;
 	
 	public PowerObjekt(int x_, int y_, int xsize, int ysize) 
 	{
@@ -20,7 +22,19 @@ public class PowerObjekt implements ITastatur
 		tastatur.meldeAnTaste("ENTER", "Enter");
 	}
 	
-	public int berechnePower()
+	public void setzeLink(ITuWas linkObj)
+	{
+		link = linkObj;
+		linkID = 0;
+	}
+	
+	public void setzeLink(ITuWas linkObj, int ID)
+	{
+		link = linkObj;
+		linkID = ID;
+	}
+	
+	public void berechnePower()
 	{
 		Rechteck leiste = new Rechteck(x, y, xSize, ySize);
 		leiste.setzeFarbe("gruen");
@@ -54,12 +68,14 @@ public class PowerObjekt implements ITastatur
 			}
 			if(tastatur.istgedrueckt("ENTER"))
 			{
-				return power;
+				break;
 			}
 			StaticTools.warte(5);
 		}
-		
-		return power;
+		leiste.entfernen();
+		leiste = null;
+		link.tuWas(linkID);
+		return;
 	}
 	
 	@Override

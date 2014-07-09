@@ -196,3 +196,30 @@ public class Shop implements IScreen {
 
     }
 }
+class SpeedStart extends Upgrade
+{
+	int[] price;
+	double[] menge;
+	public SpeedStart( int x, int y, int xsize, int ysize) 
+	{
+		super(3, x, y, xsize, ysize, "Erhöhe Startgeschwindigkeit");
+		price = new int[]{50, 200, 500};
+		menge = new double[]{15, 25, 40};
+	}
+
+	@Override
+	public boolean upgrade() 
+	{
+		if(GameEngine.coins < price[level])
+		{
+			return false;
+		}
+		else
+		{
+			GameEngine.coins -= price[level];
+			GameEngine.startV += menge[level];
+			return true;
+		}
+	}
+	
+}

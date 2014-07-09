@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 
-public class GameLoop 
+public class GameLoop implements ITuWas 
 {
     public ArrayList<SpielObjekt> objekte = new ArrayList<SpielObjekt>();
     public Spieler spieler;
     public Hintergrund hintergrund;
     public boolean aktiv;
+    public boolean rechnet;
     public double a_x;
     public double v_x;
     public double a_y;
@@ -25,16 +26,29 @@ public class GameLoop
         v_y = 10.0D;
         hintergrund = new Hintergrund("hintergrund_boden.png", "hintergrund_mitte.png", "hintergrund_himmel.png", 0, 0, 500, 500);
         spieler = new Spieler(0, 300);
-        //PowerObjekt power = new PowerObjekt(500, 100, 200, 50);
-        //int powerInt = power.berechnePower();
-        //PowerObjekt winkel = new PowerObjekt(500, 100, 180, 50);
-        //int winkelInt = winkel.berechnePower() / 2;
-        //double v = GameEngine.startV *((double) (powerInt / 200));
-        //double a = GameEngine.startA *((double) (powerInt / 200));
-        //v_x = Math.sin(((double) winkelInt) / 180.0D * Math.PI) * v;
-        //v_y = Math.cos(((double) winkelInt) / 180.0D * Math.PI) * v;
-        //a_x = Math.cos(((double) winkelInt) / 180.0D * Math.PI) * a;
-        //a_y = Math.cos(((double) winkelInt) / 180.0D * Math.PI) * a;
+        PowerObjekt power = new PowerObjekt(500, 100, 200, 50);
+        power.setzeLink(this, 1);
+        while(rechnet)
+        {
+        	System.out.println("berechne power");
+        	power.berechnePower();
+        }
+        int powerInt = power.power / 200;
+        power = null;
+        PowerObjekt winkel = new PowerObjekt(500, 100, 180, 50);
+        winkel.setzeLink(this, 2);
+        while(rechnet)
+        {
+        	System.out.println("berechne winkel");
+        	winkel.berechnePower();
+        }
+        int winkelInt = winkel.power / 2;
+        double v = GameEngine.startV *((double) (powerInt / 200));
+        double a = GameEngine.startA *((double) (powerInt / 200));
+        v_x = Math.sin(((double) winkelInt) / 180.0D * Math.PI) * v;
+        v_y = Math.cos(((double) winkelInt) / 180.0D * Math.PI) * v;
+        a_x = Math.cos(((double) winkelInt) / 180.0D * Math.PI) * a;
+        a_y = Math.cos(((double) winkelInt) / 180.0D * Math.PI) * a;
         s_x = GameEngine.startX;
         s_y = GameEngine.startY;
         zeitStart = System.currentTimeMillis();
@@ -139,6 +153,23 @@ public class GameLoop
             objekte.add(new Hinderniss(500, GameEngine.random.nextInt(250)));
         }
     }
+
+	@Override
+	public void tuWas(int ID) 
+	{
+		switch(ID)
+		{
+		case 1:
+			rechnet = false;
+			break;
+		case 2:
+			rechnet = false;
+			break;
+		default:
+			break;
+		}
+		
+	}
 }
 
 class Spieler extends SpielObjekt
