@@ -73,7 +73,7 @@ public class GameEngine
         {
             musikEngine = new AudioPlayer();
         }
-        
+        Zeichnung.setzeFenstergroesse(500, 700);
         screens.put("Mainmenu", new MainMenu()); //fügt das hauptmenu zur screensMap hinzu
         screens.put("Optionen", new Optionen());
         screens.put("Achievements", new Achievements());
