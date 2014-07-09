@@ -1,12 +1,16 @@
 import java.util.ArrayList;
 
-public class GameLoop implements ITuWas 
+public class GameLoop implements ITuWas, ITastatur 
 {
+	public Tastatur tastatur;
+	
     public ArrayList<SpielObjekt> objekte = new ArrayList<SpielObjekt>();
     public Spieler spieler;
     public Hintergrund hintergrund;
+    
     public boolean aktiv;
     public boolean rechnet;
+    
     public double a_x;
     public double v_x;
     public double a_y;
@@ -21,6 +25,7 @@ public class GameLoop implements ITuWas
     public void start()
     {
         aktiv = true;
+        rechnet = true;
         int i = 0;
         v_x = GameEngine.startV;
         v_y = 10.0D;
@@ -28,21 +33,25 @@ public class GameLoop implements ITuWas
         spieler = new Spieler(0, 300);
         PowerObjekt power = new PowerObjekt(500, 100, 200, 50);
         power.setzeLink(this, 1);
+    	System.out.println("berechne power");
+    	power.berechnePower();
         while(rechnet)
         {
-        	System.out.println("berechne power");
-        	power.berechnePower();
+        	StaticTools.warte(0.1D);
         }
+        rechnet = true;
         int powerInt = power.power / 200;
         power = null;
         PowerObjekt winkel = new PowerObjekt(500, 100, 180, 50);
         winkel.setzeLink(this, 2);
+    	System.out.println("berechne winkel");
+    	winkel.berechnePower();
         while(rechnet)
         {
-        	System.out.println("berechne winkel");
-        	winkel.berechnePower();
+        	StaticTools.warte(0.1D);
         }
         int winkelInt = winkel.power / 2;
+        winkel = null;
         double v = GameEngine.startV *((double) (powerInt / 200));
         double a = GameEngine.startA *((double) (powerInt / 200));
         v_x = Math.sin(((double) winkelInt) / 180.0D * Math.PI) * v;
@@ -51,6 +60,11 @@ public class GameLoop implements ITuWas
         a_y = Math.cos(((double) winkelInt) / 180.0D * Math.PI) * a;
         s_x = GameEngine.startX;
         s_y = GameEngine.startY;
+        tastatur = new Tastatur();
+        tastatur.setzeLink(this);
+        tastatur.tstRichtung();
+        tastatur.meldeAnTaste("ESCAPE", "ESCAPE");
+        Zeichnung.gibZeichenflaeche().requestFocusInWindow();
         zeitStart = System.currentTimeMillis();
         zeitLetzterSchritt = zeitStart + 50L;
         while(aktiv)
@@ -71,8 +85,16 @@ public class GameLoop implements ITuWas
             System.out.println(s_y);
             System.out.println(v_y);
         }
-        zeitEnde = System.currentTimeMillis();
-        GameEngine.coins =GameEngine.coins + GameEngine.coinsPerM * s_x + GameEngine.coinsPerS * ((double)(zeitEnde - zeitStart)) / 1000;
+        if(aktiv)
+        {
+        	zeitEnde = System.currentTimeMillis();
+        	GameEngine.coins =GameEngine.coins + GameEngine.coinsPerM * s_x + GameEngine.coinsPerS * ((double)(zeitEnde - zeitStart)) / 1000;
+        }
+        for(SpielObjekt objekt : objekte)
+        {
+        	objekt.bildC.entfernen();
+        	objekt = null;
+        }
         spieler.bildC.entfernen();
         spieler = null;
         hintergrund.entfernen();
@@ -122,7 +144,7 @@ public class GameLoop implements ITuWas
         }
         for(SpielObjekt objekt : objekte)
         {
-            objekt.bewege((int) x * 10, (int) -y * 10);
+            objekt.bewege((int) -x * 10, (int) -y * 10);
             if(objekt.gibHitBox().berechneZusammenstossMit(spieler.gibHitBox()))
             {
                 objekt.beiZusammenstossMit(spieler);
@@ -133,7 +155,7 @@ public class GameLoop implements ITuWas
                 objekte.remove(objekt);
             }
         }
-        hintergrund.bewege((int) x * 10, (int) -y * 10);
+        hintergrund.bewege((int) -x * 10, (int) -y * 10);
     }
 
     public void stop()
@@ -169,6 +191,31 @@ public class GameLoop implements ITuWas
 			break;
 		}
 		
+	}
+
+	@Override
+	public void tastenAktion(String rueckgabe) 
+	{
+		switch(rueckgabe)
+		{
+		case "LEFT":
+			a_x = -GameEngine.xA;
+			break;
+		case "RIGHT":
+			a_x = GameEngine.xA;
+			break;
+		case "DOWN":
+			a_y = -GameEngine.yA;
+			break;
+		case "UP":
+			a_y = GameEngine.yA;
+			break;
+		case "ESCAPE":
+			stop();
+			break;
+		default:
+			break;
+		}
 	}
 }
 

@@ -21,6 +21,9 @@ public class GameEngine
     public static double maxV = 50.0D;
     public static double maxA = 10.0D;
     
+    public static double xA = 5.0D;
+    public static double yA = 5.0D;
+    
     public static double WiderstandV = 0.05D;
     public static double widerstandZusatzV = 0.2D;
     public static double widerstandBoden = 0.2D;
